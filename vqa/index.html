@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
+        
         <meta name="author" content="BinWang777">
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>LMM评测平台</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>VQA - LMM评测平台</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
@@ -25,10 +25,10 @@
         </script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href=".">LMM评测平台</a>
+                <a class="navbar-brand" href="..">LMM评测平台</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -38,23 +38,23 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">Leaderboard</a>
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Leaderboard</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">可视化评测 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="caption/" class="dropdown-item">Caption</a>
+    <a href="../caption/" class="dropdown-item">Caption</a>
 </li>
                                     
 <li>
-    <a href="vqa/" class="dropdown-item">VQA</a>
+    <a href="./" class="dropdown-item active">VQA</a>
 </li>
                                     
 <li>
-    <a href="detection/" class="dropdown-item">检测</a>
+    <a href="../detection/" class="dropdown-item">检测</a>
 </li>
                                 </ul>
                             </li>
@@ -67,12 +67,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href="../caption/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="caption/" class="nav-link">
+                                <a rel="next" href="../detection/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -94,12 +94,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#lmm" class="nav-link">LMM评测平台</a>
+            <li class="nav-item" data-level="2"><a href="#vqa" class="nav-link">VQA任务可视化评估</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#leaderboard" class="nav-link">Leaderboard</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -107,76 +103,29 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="lmm">LMM评测平台</h1>
-<p>hosted by 360 AI Institute</p>
+<h2 id="vqa">VQA任务可视化评估</h2>
+</p>
+<p><font color=red>COCO_train2014_000000547795.jpg</font> </p>
+<div  align="center">    
+<img src="\testimgs\COCO_train2014_000000547795.jpg" width="" height="">
+</div>
+<p><font color=red>Model Answers:</font> </p>
 <hr />
-<h2 id="leaderboard">Leaderboard</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Model</th>
-<th style="text-align: left;">Use-Datasets</th>
-<th style="text-align: left;">Time</th>
-<th style="text-align: left;">Mmbench_cn(dev)</th>
-<th style="text-align: left;">Mmbench_cn(test)</th>
-<th style="text-align: left;">Refcoco</th>
-<th style="text-align: left;">Coco</th>
+<th style="text-align: left;">Question</th>
+<th style="text-align: left;">用中文详细描述一下这张图片</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">stage3-13b-grit+llava+sharegpt4v</td>
-<td style="text-align: left;">llava1.5+regvqa+flickr+caption2k</td>
-<td style="text-align: left;">2024.1.9</td>
-<td style="text-align: left;">53.6</td>
-<td style="text-align: left;">54.5</td>
-<td style="text-align: left;">86.05</td>
-<td style="text-align: left;">53.262</td>
+<td style="text-align: left;">llava-v1.5-13b</td>
+<td style="text-align: left;">这张图片展示了一个人在一个公共场所，正在使用他的笔记本电脑。他是一个穿着黑色衣服的男子，佩戴着黑色帽子。他坐在一个椅子上，并且还有其他人在他周围，也在使用他们的笔记本电脑。在这个场所，还有其他人坐在椅子上，并且还有一个椅子没有人坐在上面。这个场所似乎是一个办公室或者一个公共的咖啡馆，人们在这里工作或者休息。</td>
 </tr>
 <tr>
-<td style="text-align: left;">stage3-13b-grit+llava+sharegpt4v</td>
-<td style="text-align: left;">llava1.5+regvqa+flickr+caption2k</td>
-<td style="text-align: left;">2024.1.9</td>
-<td style="text-align: left;">53.6</td>
-<td style="text-align: left;">54.5</td>
-<td style="text-align: left;">86.05</td>
-<td style="text-align: left;">53.262</td>
-</tr>
-<tr>
-<td style="text-align: left;">stage3-13b-grit+llava+sharegpt4v</td>
-<td style="text-align: left;">llava1.5+regvqa+flickr+caption2k</td>
-<td style="text-align: left;">2024.1.9</td>
-<td style="text-align: left;">53.6</td>
-<td style="text-align: left;">54.5</td>
-<td style="text-align: left;">86.05</td>
-<td style="text-align: left;">53.262</td>
-</tr>
-<tr>
-<td style="text-align: left;">stage3-13b-grit+llava+sharegpt4v</td>
-<td style="text-align: left;">llava1.5+regvqa+flickr+caption2k</td>
-<td style="text-align: left;">2024.1.9</td>
-<td style="text-align: left;">53.6</td>
-<td style="text-align: left;">54.5</td>
-<td style="text-align: left;">86.05</td>
-<td style="text-align: left;">53.262</td>
-</tr>
-<tr>
-<td style="text-align: left;">stage3-13b-grit+llava+sharegpt4v</td>
-<td style="text-align: left;">llava1.5+regvqa+flickr+caption2k</td>
-<td style="text-align: left;">2024.1.9</td>
-<td style="text-align: left;">53.6</td>
-<td style="text-align: left;">54.5</td>
-<td style="text-align: left;">86.05</td>
-<td style="text-align: left;">53.262</td>
-</tr>
-<tr>
-<td style="text-align: left;">stage3-13b-grit+llava+sharegpt4v</td>
-<td style="text-align: left;">llava1.5+regvqa+flickr+caption2k</td>
-<td style="text-align: left;">2024.1.9</td>
-<td style="text-align: left;">53.6</td>
-<td style="text-align: left;">54.5</td>
-<td style="text-align: left;">86.05</td>
-<td style="text-align: left;">53.262</td>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片描绘了一群人坐在一个房间里，每个人都在使用笔记本电脑。房间里有几把椅子，其中一把椅子位于图像的左侧，另一把椅子位于右侧。房间里有几个人，其中一些人坐在椅子上，而另一些人则坐在地板上。</td>
 </tr>
 </tbody>
 </table>
@@ -188,15 +137,15 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
+        <script src="../js/base.js"></script>
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script src="search/main.js"></script>
+        <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -261,8 +210,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.5.3
-Build Date UTC : 2024-01-10 02:46:41.462973+00:00
--->
