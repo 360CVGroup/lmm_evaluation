@@ -1,0 +1,29 @@
+{"image": "002.jpg", "text": "这是什么水果？", "category": "conv", "question_id": 4}
+{"image": "002.jpg", "text": "图像中有多少未切割的水果？", "category": "conv", "question_id": 5}
+{"image": "002.jpg", "text": "详细描述这张照片。", "category": "detail", "question_id": 6}
+{"image": "002.jpg", "text": "想象一下图像中水果的香味。你会如何向以前从未吃过这种水果的人描述这一点？", "category": "complex", "question_id": 7}
+{"image": "004.jpg", "text": "照片中的男人叫什么名字？", "category": "conv", "question_id": 11}
+{"image": "004.jpg", "text": "图片中模仿了哪个标志性的电影场景？", "category": "conv", "question_id": 12}
+{"image": "004.jpg", "text": "这个图片如何反映或评论埃隆·马斯克的公众形象、个性或行为？", "category": "complex", "question_id": 13}
+{"image": "006.jpg", "text": "你知道这是谁画的吗？", "category": "conv", "question_id": 16}
+{"image": "006.jpg", "text": "详细描述这幅画。", "category": "detail", "question_id": 17}
+{"image": "006.jpg", "text": "讨论这幅画在艺术界的历史影响和意义。", "category": "complex", "question_id": 18}
+{"image": "008.jpg", "text": "图片中的角色叫什么名字？", "category": "conv", "question_id": 21}
+{"image": "008.jpg", "text": "这个角色的性格是什么？解释角色设计的哪些元素或方面可能有助于其受欢迎程度。", "category": "complex", "question_id": 22}
+{"image": "010.jpg", "text": "详细描述这张照片。", "category": "detail", "question_id": 25}
+{"image": "010.jpg", "text": "这张照片有什么不寻常的地方？", "category": "complex", "question_id": 26}
+{"image": "012.jpg", "text": "套装中有多少个咖啡杯？", "category": "conv", "question_id": 32}
+{"image": "012.jpg", "text": "为此写一个有吸引力的产品描述。", "category": "complex", "question_id": 33}
+{"image": "014.jpg", "text": "你能详细解释一下这个图片吗？", "category": "complex", "question_id": 35}
+{"image": "016.jpg", "text": "对此图像进行详细说明。 逐个面板描述它。", "category": "detail", "question_id": 39}
+{"image": "016.jpg", "text": "这张照片有什么好笑的？逐个面板描述它。", "category": "complex", "question_id": 40}
+{"image": "018.jpg", "text": "画中的动物是什么，它们在做什么？", "category": "conv", "question_id": 43}
+{"image": "018.jpg", "text": "根据这幅画写一个童话故事。", "category": "complex", "question_id": 44}
+{"image": "020.jpg", "text": "详细描述这个草图。", "category": "detail", "question_id": 47}
+{"image": "020.jpg", "text": "编写简短的 HTML/JS，将这个模型变成一个丰富多彩的交互式网站，其中笑话被一个真正的笑话所取代。", "category": "complex", "question_id": 48}
+{"image": "022.jpg", "text": "供应这些菜肴的餐厅叫什么名字？", "category": "conv", "question_id": 51}
+{"image": "022.jpg", "text": "详细描述这张照片。", "category": "detail", "question_id": 52}
+{"image": "022.jpg", "text": "如果有人要为这道菜推荐一种新的口味或配料，请描述这种变化的原因以及它如何改变整体味道。", "category": "complex", "question_id": 53}
+{"image": "024.jpg", "text": "详细描述这张照片。", "category": "detail", "question_id": 57}
+{"image": "024.jpg", "text": "这个城市可能面临什么问题？有哪些可能的解决方案？", "category": "complex", "question_id": 58}
+{"image": "024.jpg", "text": "解释指示当前交通状况的所有提示。", "category": "complex", "question_id": 59}

@@ -1,0 +1,1270 @@
+<!doctype html>
+<html>
+    <head>
+                <title>LLava_bench - LMM评测平台</title>
+
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            
+            
+            <meta name="author" content="BinWang777">
+
+            
+                <link  rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+            
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                        <script>hljs.initHighlightingOnLoad();</script>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../assets/css/main.min.css">
+                <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+                <script src="../search/main.js"></script>
+
+            
+                
+            
+    </head>
+
+    <body>
+        <div class="container py-3">
+            <header>
+                    <!-- block header -->
+<nav class="navbar navbar-expand-xl border-bottom">
+    <div class="container-fluid">
+        
+
+        
+            <span class=" fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">LMM评测平台</span>
+        
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+            <ul class="navbar-nav">
+
+                <!-- block menu -->
+                <li class="nav-item">
+                    <!-- block menu -->
+    
+        <li class="nav-item" id="component-menu">
+            <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="..">[Leaderboard]</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class=" active 
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[可视化评测]</a>
+                            <ul class="dropdown-menu">
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../caption/" class="dropdown-item text-decoration-none ">Caption</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../vqa/" class="dropdown-item text-decoration-none ">VQA</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../detection/" class="dropdown-item text-decoration-none ">检测</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="./" class="dropdown-item text-decoration-none  active ">LLava_bench</a>
+    </li>
+<!-- endblock -->
+                            </ul>
+                        </li>
+            </ul>
+        </li>
+<!-- endblock -->
+                </li>
+                <!-- endblock -->
+
+                <!-- block search -->
+                <li class="nav-item">
+                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <div class="md-search-icon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </li>
+                <!--  endblock -->
+
+                <!-- block source -->
+                <li class="nav-item">
+                    
+                </li>
+                <!--  endblock -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--  endblock -->
+            </header>
+
+            <main><!-- block search -->
+<div class="collapse" id="collapseExample">
+    <div role="search" class="search-box">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" class="search-query"
+            placeholder="Search docs" title="Type search term here" />
+        </form>
+    </div>
+</div>
+<!-- endblock -->
+                    <!-- block content -->
+<section class="container post">
+    <article>
+        <header>
+            
+                <h1 class=" title" id="component-title">LLava_bench</h1>
+            
+        </header>
+        <p><h2 id="llava-bench">LLava-Bench</h2>
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 80%;
+}
+</style>
+
+<p><font color=red>Question_id: 4  Category: conv</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/002.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">这是什么水果？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这是柿子。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">苹果</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">图片中的水果是石榴。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">图片显示了一组未成熟的荔枝果实。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">这是山竹。山竹是热带水果，皮肤呈红紫色，果肉呈白色。它们也因其独特而美味的味道而被称为“水果之王”。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 5  Category: conv</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/002.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">图像中有多少未切割的水果？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">在图像中，有四个未切割的水果。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">图片中有四个未经切割的水果。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">图片中有四个未经切割的水果。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">图像中有三个未切割的水果。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 6  Category: detail</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/002.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">详细描述这张照片。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">The image presents a close-up view of four ripe purple rambutan fruits, each with a green stem on top. They are arranged in a square formation on a dark wooden surface. The top left fruit is slightly overlapping the top right fruit, while the bottom left and right fruits are positioned side by side. The rambutan fruits are cut open, revealing their white flesh inside. The background is blurred, but it appears to be a continuation of the dark wooden surface with hints of green leaves. The image does not contain any discernible text. The relative positions of the fruits and their openings create a visually appealing pattern.</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片展示了一张木制餐桌，上面有几个紫色的苹果。这些苹果有各种形状和大小，有些是完整的，有些是切开的。在苹果的附近，有一个绿色的植物，它的叶子延伸到桌子的边缘。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">图片中有一张木桌，桌上放着一篮子水果，包括苹果、橙子和香蕉等各种水果。桌子上有三个苹果，一个放在左边附近，另一个在中间，第三个放在右边。</p>除了苹果，桌子上还有两个桔子，一个在中间，另一个在右边。桌子左侧可以看到一根香蕉，还有一簇葡萄，一些葡萄放在中心附近，另一些放在右侧。桌子上摆满了各种各样的水果，形成了一个丰富多彩、令人垂涎欲滴的展示。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">图片展示了一张木桌，上面摆放着各种水果。总共有四种水果，其中一种被切成两半，露出了内部。另外三个水果是完整的，放在桌子周围。这些水果大小不同，形状各异，形成了一种有趣而丰富多彩的排列方式。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">图中有四颗山竹，其中一颗被切成两半，露出里面的白色果肉。山竹被放在一张棕色的木桌上，桌子的左侧有一个白色的篮子。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 7  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/002.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">想象一下图像中水果的香味。你会如何向以前从未吃过这种水果的人描述这一点？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">想象一下这个水果的香味，我会说：“这种水果具有浓郁的、淡淡的、甜美的和酸度，它们的香气非常浓郁，有着淡淡的柠檬味，但同时也带有一些酸度，让人咀嚼时会感觉到一丝微弱的甜味。这种水果的香味非常鲜美，让人忍不住想要一口尝一口。”</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这种水果的外表看起来像是混合了苹果和橙子的颜色，有着独特的红紫色。它们的外表有些像苹果，有些像橙子，有些像柑橘。它们的味道可能是甜的，有一种柔和的香气，具有柑橘和苹果的混合风味。这种水果可能是一种新鲜的水果，可以作为蛋糕、甜点、糕点或甜点的馅料。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">图片中的水果有一种独特的异国风味，可以用甜味和浓烈的味道相结合来形容。果实被切开，露出其多汁而充满活力的内部。这种香气可能与大多数西方国家常见的水果（如苹果、橙子或香蕉）截然不同。对于从未体验过这种水果的人来说，这可能是一次有趣而令人兴奋的感官体验，因为这种香味可以唤起人们对水果味道和质地的冒险和好奇。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">图片中的水果是紫色和绿色的混合物，它们有一种独特而迷人的香味。对于一个以前从未吃过这种水果的人来说，我会把它的香味描述为甜与辣的结合，还有一丝柑橘的味道。香气非常独特，令人难忘，对于第一次尝试的人来说，这是一次有趣而愉快的体验。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">图片中水果的香味被描述为甜味和微酸香气的混合。它让人联想到热带或亚热带气候，这种水果很常见。香味浓郁而诱人，将人们的注意力吸引到水果的新鲜度和质量上。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 11  Category: conv</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/004.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">照片中的男人叫什么名字？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">照片中的男人叫做Tarzan。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">卡尔</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">照片中的男子是埃隆·马斯克。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">照片中的男子是埃隆·马斯克。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">照片中男子的名字是埃隆·马斯克（Elon Musk）。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 12  Category: conv</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/004.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">图片中模仿了哪个标志性的电影场景？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这个图片模仿了《冒险者之旅》中的一个著名场景，其中Elon Musk（特斯拉公司创始人）的脸印在了一个动物（可能是狐狸或狮子）的身上，而不是在人类的身体上。这个场景在电影中展示了一个幽默和冒险的情节，让观众感到各种惊喜和惊悚。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片模仿了电影《狮子王》中的一个场景，狮子王抱着一只小狮子。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这个迷因模仿了《狮子王》中的标志性电影场景，一个名叫辛巴的角色怀里抱着一只幼狮。在表情包中，一名男子怀里抱着一只小狗，模仿《狮子王》中的场景。这在原来的场景上创造了一个幽默而意想不到的转折，因为该男子不是狮子，而是一个抱着小狗的人。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">这个表情包模仿了电影《狮子王》中辛巴被拉菲基抱起的标志性场景，拉菲基把辛巴抱在骄傲岩上方。在表情包中，一名男子抱着一只小狗，小狗的位置看起来像是被男子举起来的，模仿了《狮子王》中的场景。这种对原始场景的幽默和创造性改编为图像增添了一个有趣的转折。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">这个模因模仿了《狮子王》中的标志性场景，拉菲基举起辛巴，宣布他是荣耀山丘的合法国王。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 13  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/004.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">这个图片如何反映或评论埃隆·马斯克的公众形象、个性或行为？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这个图片通过将埃隆·马斯克的脸印在了《冰与火之歌》中的狼人身上，来反映或评论埃隆·马斯克的公众形象、个性或行为。这种创意可以看作是对埃隆·马斯克的个性或行为进行幽默或讽刺的表达，暗示他可能有一些与科技、创新和冒险精神相关的特质。然而，这种表达方式也可能被视为讽刺或嘲笑，因为它将一个非虚构的人物赋予了虚构中的形象，这种做法可能被认为是不恰当或不尊重。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片描绘了一个有趣的场景，一只猴子抱着一个人的头，这个人看起来像是马斯克。这张照片可以被解读为马斯克的幽默和创造性，以及他在社交媒体上的幽默表现。这张照片可以被视为马斯克的个性和行为的一种戏谑和夸张的表现。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这个表情包以埃隆·马斯克抱着一只狗微笑的漫画为特色，是这位科技企业家轻松幽默的形象。它反映了埃隆·马斯克顽皮和平易近人的一面，他经常被描绘成一个严肃而雄心勃勃的人。这个表情包也可能是在评论他对狗的爱，因为众所周知，他会在社交媒体上分享自己对狗的喜爱。总的来说，这个模因是一种创造性和娱乐性的方式，可以展示埃隆·马斯克个性和公众形象的不同一面。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">该表情包以埃隆·马斯克抱着小狗的卡通形象为特色，很可能以轻松幽默的方式反映或评论了他的公众形象、个性或行为。通过将一个男人抱着狗的形象与一个卡通人物相结合，这个迷因可能表明埃隆·马斯克是一个了不起的人物，或者他被认为是一个古怪或古怪的人。这个迷因也可能是对公众对埃隆·马斯克着迷的评论，因为他经常出现在新闻中，并在社交媒体上占有重要地位。这个迷因可能被视为一种有趣的方式，以吸引他的公众形象和他所受到的关注。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">这个模因似乎以一种俏皮和夸张的方式将埃隆·马斯克的脸与一个动画角色并列。这个角色被描绘成一个四肢修长的生物，伸展到一个漂浮的物体上，它代表狗狗币，一种加密货币。这可以看作是对埃隆·马斯克（Elon Musk）对狗狗币价值或受欢迎程度的影响或影响的幽默演绎。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 16  Category: conv</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/006.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">你知道这是谁画的吗？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这幅画是由著名画家莫扎特（Vincent Van Gogh）创作的。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这是莎达加斯加的画。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">是的，这幅画是由达·芬奇创作的。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">是的，这幅画是一幅著名的蒙娜丽莎肖像画，由达·芬奇所画。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">这幅画是列奥纳多·达·芬奇的名作《蒙娜丽莎》。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 17  Category: detail</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/006.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">详细描述这幅画。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">The image portrays a woman, captured in the distinct style of the Italian Renaissance. She is depicted in a three-quarter view, a common technique used during this period to add depth and realism to the portrait. The woman's face and hair are the focal points of the piece, rendered in a realistic manner that showcases the artist's skill and attention to detail.</p></p>The background of the painting is a landscape, painted in a loose, sketchy style that contrasts with the detailed depiction of the woman. This juxtaposition of styles is a characteristic of the Renaissance genre, where artists often used different techniques to create a sense of depth and perspective.</p></p>The color palette is dominated by warm hues, with a prevalence of yellows, oranges, and browns. These colors are rich and warm, adding a sense of warmth and vitality to the piece. The use of these colors also complements the realistic depiction of the woman, further enhancing the overall visual impact of the painting.</p></p>Overall, the painting is a beautiful representation of the Italian Renaissance style, characterized by its realistic depiction of the human form, the use of warm colors, and the contrast between detailed and sketchy styles. The painting is a testament to the artist's skill and the rich cultural and artistic traditions of the Italian Renaissance.</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这幅画描绘了一位女子，她穿着一件黑色裙子，头顶着一块棕色的帽子。她的头发是金色的，她的眼睛是深棕色的。她的头发被戴着一块棕色的帽子，帽子上有一个细小的花纹。她的头发是金色的，她的眼睛是深棕色的。她的头发被戴着一块棕色的帽子，帽子上有一个细小的花纹。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这张照片的特点是一位面带微笑的女性，可能是一位著名艺术家的肖像。她戴着面纱，面带与众不同的微笑，为这幅画增添了温暖和魅力。女人是这幅画的主要焦点，她的表情和服装创造了一个迷人而迷人的场景。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">这张照片的特点是一个女人的肖像，带着平静的微笑，画的风格让人想起蒙娜丽莎。这个女人的脸是这幅画的主要焦点，她似乎正直视着观众。这幅肖像画以山脉为背景，增加了场景的深度和趣味性。这位女士的发型与她的面部特征相得益彰，她的整体造型优雅而永恒。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">《蒙娜丽莎》是达芬奇的一幅画。她穿着黑色连衣裙，留着棕色的长发。这幅画的背景是山川林林的风景。这幅画充满了细节，其中蒙娜丽莎的面部特征最为突出。这幅画的色调是暖色调，天空是浅蓝色的，山川是深绿色和棕色的。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 18  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/006.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">讨论这幅画在艺术界的历史影响和意义。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这幅画是著名的莫那娜画，也被称为《莫那娜·维特林》。这幅画创作于1508年，是文艺复兴时期的代表作之一。它是一幅肖像画，描绘了一位年轻女子的肖像，展现了她的美貌和娇嫩。这幅画在艺术界具有巨大的历史影响和意义，因为它标志着肖像画的新时代，也是人物肖像画的开创之作。此外，这幅画对于人类的美学理念和对于女性形象的描绘也产生了深远的影响。莫那娜画成为了文艺复兴时期的代表作之一，也成为了西方艺术史上最具影响力的艺术品之一。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这幅画是著名的意大利文艺复兴时期画家拉斐尔的代表作之一，被认为是他最具代表性的作品之一。这幅画描绘了一位女子，她穿着一件黑色裙子，头顶一块棕色的布，脸上戴着红色的假发。这位女子的眼睛和微笑是这幅画的焦点，她的脸上映出了一种坚定和自信的表情。这幅画的复杂的背景和细腻的绘画技巧展现了拉斐尔的高超和创造力。这幅画被认为是拉斐尔的代表作之一，它展现了他对人类情感和精神的深刻理解，并展现了他对艺术的独特见解。这幅画在艺术界享有很高的声誉，被广泛认为是文艺复兴时期最具代表性的作品之一。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这幅戴面纱的女人画，可能是丽莎·格拉迪尼的肖像，是列奥纳多·达·芬奇的著名作品。它被认为是艺术界最具标志性和影响力的画作之一。这幅画的历史影响在于它表现了艺术家的技巧和技巧，以及当时的文化和社会背景。这幅画展示了艺术家捕捉人类形体之美和复杂性的能力，以及他对光和影的掌握。</p>这幅画在艺术界的意义在于它经久不衰的吸引力和它作为艺术卓越象征的地位。这幅肖像画被广泛复制和模仿，它仍然是艺术爱好者和历史学家钦佩和着迷的主题。这幅画的历史意义和文化意义使其成为研究和欣赏的主题，有助于更广泛地理解和欣赏文艺复兴时期的艺术成就。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">《微笑的女人》是蒙娜丽莎的肖像画，是世界上最著名和最具标志性的艺术品之一。这幅画由列奥纳多·达·芬奇创作，是艺术家捕捉人类形态和表情的技巧和精通的一个典型例子。这幅肖像画在艺术界的历史影响和意义可归因于几个因素：</p>1.这幅画的主题是蒙娜丽莎，据信是来自佛罗伦萨的富商弗朗西斯科·德尔·乔孔多的妻子丽莎·格拉迪尼。这幅肖像的主题和艺术家捕捉她的肖像和表情的技巧使其成为美丽和优雅的象征。</p>2.这幅画的构图和技法受到艺术家和艺术史学家的广泛研究和钦佩。sfumato的使用，一种创造朦胧梦幻效果的技术，增加了这幅画神秘迷人的品质。</p>3.《蒙娜丽莎》一直是许多解释和理论的主题，包括认为这幅画包含隐藏的含义或符号。这也促成了这幅画经久不衰的魅力和吸引力。</p>4.这幅画的流行和广泛认可使它成为艺术成就的象征和西方艺术史的基石。它已在世界各地的博物馆和画廊展出，每年吸引数百万游客。</p>总之，《蒙娜丽莎》在艺术界的历史影响和意义可以归因于它的题材、艺术家的技巧、绘画的构图和技巧，以及它对艺术爱好者和公众的持久魅力和吸引力。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">达芬奇绘制的《蒙娜丽莎》是世界上最著名的画作之一。它产生了重大的历史影响，并以其神秘的微笑、细致的笔触和围绕所描绘的女人的神秘感而闻名。这幅画是文艺复兴时期艺术的杰作，被许多人认为是文艺复兴时期高雅风格的缩影。它也是世界上参观人数最多的画作之一，每年吸引数百万游客前往巴黎卢浮宫博物馆。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 21  Category: conv</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/008.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">图片中的角色叫什么名字？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这个角色的名字是冰河（Vegeta）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这个角色的名字是“小杉”。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">照片中的角色名叫“肯尼”</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">图像中角色的名字叫江户川柯南，也被称为名侦探柯南。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">图片中的角色是江户川柯南，也被称为工藤智明，来自动漫和漫画系列《名侦探柯南》。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 22  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/008.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">这个角色的性格是什么？解释角色设计的哪些元素或方面可能有助于其受欢迎程度。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这个角色是一个可爱的小男孩，穿着眼镜和红色吊带。他的性格可能是友好、好动、有点聪明、充满好奇心。这个角色的设计元素，如眼镜和红色吊带，可能有助于吸引儿童和家庭观众，因为这些元素通常被认为是儿童欢迎的。此外，角色的可爱外表和可爱的表情也可能吸引更广泛的观众。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这个角色是一个穿着蓝色西装、戴着眼镜、穿着红色领带的男人。这个设计的元素和细节可能有助于角色的受欢迎程度。首先，这个角色穿着西装和领带，这种服装通常被视为正式和专业的，可能表明这个角色在某个领域中具有权威和专业知识。其次，这个角色戴着眼镜，这种设计元素可以让角色看起来更加聪明和有思想，增加了角色的吸引力。最后，这个角色的眼睛是蓝色的，这种颜色通常被认为是充满活力和热情的，可能让角色看起来更加有活力和吸引力。总的来说，这个角色的设计元素和细节可以让人们觉得这个角色是一个有权威、专业、有活力和吸引力的人，这可能是为什么这个角色受到了人们的喜爱。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">照片中的角色是一个外表与众不同的小男孩，戴着眼镜，打着领结，穿着西装。这种独特的元素组合，加上他微笑的表情，表明这个角色友好、平易近人、自信。这个角色的设计，包括领结和眼镜，为他的整体造型增添了一丝精致和魅力。这些元素可能是这个角色受欢迎的原因，因为它们使他脱颖而出，给人留下了难忘的印象。这个角色的个性和设计很可能引起了观众的共鸣，使他成为流行文化中备受喜爱和认可的人物。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">照片中的角色是一个外表与众不同的年轻人，戴着眼镜，打着领结，穿着西装。考虑到他的穿着和微笑的事实，他的个性可以被描述为自信、时尚，可能还有智慧。这个角色的受欢迎程度可以归因于他的设计的几个方面，比如正装和眼镜的结合，这给了他一种独特而难忘的外观。此外，领结为他的整体外表增添了一丝精致和魅力，使他从其他角色中脱颖而出。这个角色自信的举止和时尚的外表可能会引起观众的共鸣，这也是他受欢迎的原因之一。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">图像中的角色似乎是一个棕色头发和蓝色眼睛的年轻男性，戴着眼镜和红色领结。他身着正式的蓝色西装，搭配白色衬衫和红色领结，给人一种优雅优雅的外表。角色的设计细致而清晰，有富有表现力的眼睛和自信的面部表情。这些元素的结合可能有助于这个角色的受欢迎程度，因为他散发出一种智慧、魅力和风格。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 25  Category: detail</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/010.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">详细描述这张照片。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">In the heart of a bustling city, a man in a vibrant yellow shirt and blue shorts is engaged in an unusual task. He is perched on the back of a yellow taxi, his hands skillfully maneuvering a white iron over a blue shirt. The taxi, adorned with various stickers, is in motion, adding a dynamic element to the scene.</p></p>The city street is alive with activity. A red car and a white car can be seen in the background, contributing to the urban atmosphere. The buildings lining the street are tall and imposing, their windows reflecting the city's hustle and bustle.</p></p>The man's actions seem to be in contrast with his surroundings, creating an interesting juxtaposition. Despite being in the midst of traffic, he appears focused on his task, adding a touch of everyday life to this extraordinary scene.</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片描绘了一名男子在城市街道上的一辆黄色SUV上洗衣。他站在车辆上，用洗衣板把衣服洗干。在背景中，可以看到另一辆汽车，它在背景中的位置比前面的车辆更远。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">照片中，一名男子站在一辆黄色出租车的后座上，把一件蓝色衬衫放在晾衣绳上。出租车开动时，他似乎在熨衬衫。出租车正沿着繁忙的街道行驶，现场可以看到卡车和汽车等其他车辆。</p>该地区还散布着一些盆栽植物，为城市环境增添了一丝绿色。此外，可以看到一个手提包放在现场中心附近，可能属于熨衬衫的男子或附近的其他人。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">照片中，一名男子站在一辆黄色SUV的后座上熨衬衫。他正在使用放在车辆后部的熨衣板，这是一种在旅途中熨衣服的不同寻常且富有创意的方式。</p>在背景中，可以看到另外两个人，一个在场景的左侧，另一个在右侧。在场景中间可以看到一株盆栽植物，为城市环境增添了一丝绿色。此外，背景中有一个红绿灯，表明场景发生在繁忙的城市地区。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">照片显示一名男子站在一辆停在街上的黄色汽车的后座上。他正在熨衣板上熨衣服。此外，场景中还有另外两辆车，一辆停在图片左侧，另一辆停在右侧。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 26  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/010.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">这张照片有什么不寻常的地方？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这张照片的不寻常之处在于一个男人正在穿着暴露的衣服，洗衣服的洗衣机在他的背上。这种情况是不寻常的，因为通常人们会在家里或者专门的洗衣机房里进行洗衣服的活动。这个男人的行为可能是为了表演或者参加一个特殊的活动，而不是在日常生活中的常见场景。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片的不寻常之处在于，一个男人站在一辆黄色的SUV车上，用铲子把一块布料拍打。这种情况在城市街道上很罕见，因为一辆SUV车上的人通常只是乘客，而不是在车上进行洗涤或修衣的人。此外，街道上还有其他车辆，包括一辆汽车和一辆卡车，这也表明这种情况在城市环境中很不常见。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这张照片的不同寻常之处在于，一名男子站在一辆行驶中的黄色出租车的后座上熨衣服。这不是一种典型的情况，因为熨衣服通常在室内进行，环境更可控。该男子的行为对他自己和出租车乘客都构成了风险，因为他可能会失去平衡并摔倒，导致车辆受伤或损坏。此外，在出租车后部安装洗衣机也是非传统的，因为这在出租车中并不常见。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">这张照片的不同寻常之处在于，一名男子站在行驶中的出租车后座上熨衣服。这不是一个典型的场景，因为熨衣服通常在室内进行，在一个更可控的环境中进行，而不是在乘车时进行。这名男子在汽车行驶时平衡和执行这项任务的能力是非常了不起和非传统的。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">这张照片不寻常的方面是，看到一名男子在连接在行驶中的车辆（可能是出租车）后部的熨衣板上熨烫衣服，该车正在城市街道上行驶。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 32  Category: conv</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/012.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">套装中有多少个咖啡杯？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">在这个问题中，您提到了 "套装" 和 "咖啡杯"。但是，您没有提供具体的数量信息。因此，我无法回答这个问题。如果您能提供更多信息，我将非常乐意帮助您回答。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">套装里有三个咖啡杯。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">套装里有三个咖啡杯。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">套装中有三个咖啡杯。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 33  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/012.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">为此写一个有吸引力的产品描述。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这是一个充满幽默感的产品，三个 Mario Bros. 杯子堆在一起，形成了一个可爱的 Mario 面孔。这些杯子是白色的，上面装饰有红色的 Mario 头戴和胸扣，让人立刻联想到这个经典的游戏角色。这个产品不仅是一个实用的杯子，还是一个让人心动的收藏品，尤其是对 Mario Bros. 游戏玩家来说。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这款壁纸杯是一个独特的营造，它的设计是以著名的马里奥帕洛尼卡游戏系列中的主角马里奥帕洛尼卡为特色。这款壁纸杯是由白色塑料制成的，上面有马里奥帕洛尼卡的图像。这款壁纸杯是一个独特的装饰品，适合在儿童的房间里或是游戏爱好者的工作区。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这些咖啡杯正面印有标志性电子游戏角色马里奥的可爱形象。马克杯有两种尺寸，其鲜艳的颜色和详细的设计使其非常适合任何马里奥粉丝。它们是任何咖啡或茶歇时间的一个有趣而独特的补充，它们的大尺寸确保了它们可以容纳大量的液体。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">介绍马里奥马克杯系列，其中包括三个印有标志性人物马里奥的可爱马克杯。这些马克杯非常适合喜爱的电子游戏系列《超级马里奥》的任何粉丝。每个马克杯都设计有马里奥迷人的脸，使其成为任何咖啡或茶时间的一个令人愉快的补充。马克杯有三种不同的尺寸可供选择，确保您能找到适合您需求的完美马克杯。无论你是一个休闲爱好者还是铁杆爱好者，这些马里奥马克杯一定会给你带来笑容，让你的日常生活更加愉快。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">图为一排咖啡杯，每个杯子上都印有马里奥的卡通形象。马里奥是一个受欢迎的视频游戏角色，戴着一顶带有白色字母“M”的红色帽子，穿着红色衬衫、蓝色工作服和棕色靴子。他的面部表情自信而友好。杯子是白色的，印刷的图像非常清晰生动。这是一款独特而有趣的咖啡杯套装，适合游戏迷或咖啡爱好者。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 35  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/014.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">你能详细解释一下这个图片吗？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">The image presents a playful and imaginative scene set on a black frying pan. The pan is filled with pieces of fried chicken, which are brown in color and have a crispy texture. The chicken pieces are arranged in a way that resembles a map of the world, with the pieces representing different countries. </p></p>The largest piece of chicken is positioned to represent the continents, while the smaller pieces are placed to depict the countries. This arrangement gives the impression of a globe, with the chicken pieces serving as the geographical features. </p></p>The background of the image is a stark white, which contrasts with the black frying pan and the brown chicken pieces. This contrast makes the map of chicken pieces stand out prominently in the image. </p></p>There is no text present in the image, and the focus is solely on the creative arrangement of the chicken pieces to form a map. The image does not contain any other objects or elements, and the relative positions of the chicken pieces remain constant, representing the countries on a map. </p></p>Overall, the image is a fun and imaginative representation of a world map using fried chicken as the primary elements.</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片描绘了一个烤箱的烤架上，有几片肉，看起来像是鸡翅。它们被放在一个烤箱盘上，烤箱盘上有一些油温。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这张照片的特点是一个装满炸鸡块的平底锅，排列得像一张世界地图。鸡肉块被铺在锅上，有些块被做成大洲和国家的形状。平底锅放在餐桌上，鸡肉块的排列方式使其看起来像一个地球仪。炸鸡作为世界地图的创意呈现为这道菜增添了独特而有趣的色彩。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">图片中有一个托盘，托盘上有几块裹着面包屑的肉，可能是鸡肉，排列得像一张世界地图。将肉放在平底锅上，然后将肉块展开，形成一个视觉上吸引人的地球形象。食物的创意呈现使其成为一道有趣而独特的菜肴。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">这个模因幽默地讲述了鸡块在煮熟时有时与地图上的陆地相似。顶部的文字说：“有时我只是从太空看地球的照片，我惊叹于这一切是多么美丽。这种情绪与鸡块的形象并置，旨在突出即使是最平凡的事物中寻找美的荒谬性。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 39  Category: detail</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/016.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">对此图像进行详细说明。 逐个面板描述它。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">This image is a collage of three photos, each capturing a different aspect of a smartphone charging process.</p></p>In the top left photo, we see a black smartphone lying on a beige surface. The phone is equipped with a blue USB cable, which is connected to a white USB adapter. The adapter is marked with a green "Micro-USB" symbol, indicating its compatibility with the phone.</p></p>The top right photo provides a close-up view of the white USB adapter. It's a small, rectangular device with a circular hole on top, designed to fit the Micro-USB cable.</p></p>The bottom photo shows a person's hand holding a blue USB cable. The cable is equipped with a white USB plug, ready to be inserted into the phone's USB port.</p></p>Each photo in this collage contributes to the overall narrative of smartphone charging, from the initial connection of the adapter to the phone, to the final insertion of the USB plug into the phone.</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片展示了一个人在使用一个电脑的充电设备。充电设备是一个黑色的电脑，连接到一个蓝色的充电线。充电线插入电脑的充电插槽。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这张照片是三张照片的拼贴，每张照片都展示了手机充电过程的不同方面。在第一张照片中，一部手机被放在桌子上，手机上插着一个蓝色充电器。第二张照片显示了充电器的特写，突出了它的蓝色和与手机的连接。第三张照片中，一个人拿着一个蓝色的小设备，可能是USB电缆或充电器，它连接到手机上。</p>除了手机和充电器，第三张照片中还有一个遥控器，放在拿着蓝色设备的人附近。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">这张图片是三张不同图片的拼贴，以一部手机及其配件为特色。在第一个面板中，显示了一部连接有蓝色连接器的手机，可能用于充电或数据传输。第二个面板显示了一个人拿着一部手机和一个蓝色连接器，而第三个面板则显示了一部插入蓝色连接器的手机的特写。</p>除了手机及其配件外，在右下角附近的第三个面板上还有一个遥控器。拼贴的整体主题围绕着手机及其配件的使用展开。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">该图像是三张照片的拼贴画，每张照片都描绘了电缆的不同方面。第一张照片显示手机连接到蓝色电缆，一端带有 VGA 适配器。第二张照片是VGA适配器的特写镜头，上面有一个标签，上面写着“ELECOM P-APLTDN series Cable Mania”。第三张照片显示一只手拿着同一根电缆，焦点对准 VGA 适配器和电缆的连接器。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 40  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/016.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">这张照片有什么好笑的？逐个面板描述它。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这张照片是一个有趣的三部分合成照片，其中包括一个电子设备（可能是一个手机）、一个插头和一个包装。</p></p>1. 第一部分：这是一个黑色的手机，它有一个带有蓝色插头的壳。手机的屏幕是黑色的，可能是防屏或者是黑屏。</p></p>2. 第二部分：这是一个蓝色的插头，它有一个带有白色插头的壳。插头的壳看起来很可爱，因为它有一个小小的狗咪图案。</p></p>3. 第三部分：这是一个包装，它是一个蓝色的包装盒。包装盒上有一个小小的狗咪图案，看起来很可爱。</p></p>这些三个部分的照片都很有趣，因为它们都有一个共同点：它们都有一个小小的狗咪图案。这种可爱的设计让这张照片看起来更有趣。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片展示了一个人在使用一个电脑时，将电脑的电源插入电源插槽。这个人在插插头时，手里拿着一个蓝色的电脑。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这张图片是由三块拼贴画组成的，每块拼贴画都展示了同一场景的不同方面。第一个面板的特点是将手机插入充电器，一个人的手拿着手机。第二个面板显示了充电器的特写，强调了其细节。第三个面板显示一个人拿着一个小设备，可能是USB电缆或存储卡，紧挨着手机。这张照片的有趣之处在于，这个人的手在三个面板上都拿着手机，在整个拼贴画中创造了一种连续和重复的感觉。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">这张图片是由三个面板拼贴而成的，每个面板上都有一部连接着蓝色连接器的手机。有趣的是，手机显示在三个不同的位置，看起来就像有三部不同的手机。实际的手机在每个面板中都是一样的，但角度和视角会产生多个设备的错觉。面板的排列方式是，手机位于每个面板的中心，在每种情况下都可以看到蓝色的连接器。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">该图像是三个面板的幽默拼贴画，展示了插入各种电子设备的 USB 电缆。在第一个面板中，USB线插入带有蓝色外壳的手机。第二个面板显示了 USB 适配器的特写镜头，强调了其类似于 VGA（视频图形阵列）电缆的独特设计。第三个面板幽默地展示了将相同的 USB 适配器插入 Lightning 电缆适配器，这表明它可以用来为 Apple 设备充电。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 43  Category: conv</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/018.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">画中的动物是什么，它们在做什么？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">在画中，三只动物（一只熊、一只猫和一只兔子）坐在一个木头上的圆形桌子上，享用糖果和牛奶。它们看起来像是在一个森林中举办一个小宴会。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片描绘了一个有趣的场景，一只熊和一只猫坐在一张小桌子旁，一只兔子坐在桌子旁边。这些动物围着一个小桌子，桌子上放着各种各样的食物，比如蛋糕和苹果。熊和猫似乎在吃东西，而兔子则在喝东西。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这幅画的特点是一只熊，一只猫和一只兔子坐在桌子旁吃东西。他们正在一起用餐，熊吃甜甜圈，猫用杯子喝水，兔子吃饼干。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">画中的动物是一只熊、一只猫和一只兔子。他们围坐在一张桌子旁，用杯子吃吃喝喝。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">画中的动物是一只黑熊、一只灰猫和一只浅棕色的兔子。熊坐在树桩上，左手拿着一块食物，右手拿着叉子，似乎在吃东西。猫坐在熊旁边，右手拿着一个蓝色的钱包，左手拿着一个杯子，似乎很享受食物。兔子坐在地上，右手拿着一个粉红色的杯子，似乎在吃东西。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 44  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/018.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">根据这幅画写一个童话故事。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">在一个温馨的森林里，三只动物——一只大熊猫、一只小猫和一只兔子——坐在一个落树树枝上的几何形状桌子上。他们都很感觉自己很幸福，因为他们正在一起享用一个美味的糖果和水果。</p></p>大熊猫，善良而温柔，拿着一个糖果，看着小猫和兔子，期待他们的反应。小猫，灵活而聪明，拿着一个水果，准备吃下一口。兔子，活泼好动，拿着一个糖果，准备咬下一口。</p></p>他们的笑容和快乐的表情，让这个森林变得更加美好。他们互相倾听，互相帮助，一起度过了一个愉快的时光。在这个童话世界里，他们的友谊是永恒的。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">在一个美丽的森林里，有一只棕色的熊，一只灰色的猫，和一只棕色的兔子。他们围坐在一张小桌子旁，桌子上放着一个盘子，里面有各种各样的甜甜圈。熊拿着一把勺子，准备吃甜甜圈。猫和兔子也准备吃甜甜圈。他们坐在一棵树旁，桌子上还有一把勺子和一个杯子。他们很高兴，因为他们一起吃着美味的甜甜圈。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">在一片郁郁葱葱的绿色森林中，一群动物围在餐桌旁，一起用餐。一只大棕熊、一只白猫和一只兔子是这场异想天开的聚会的主角。熊是这群人中最大、最强壮的，坐在桌子的一侧，猫和兔子坐在另一侧。</p>桌子上装饰着各种美味的食物，包括蛋糕和饼干，动物们热切地分享着这些食物。他们从放在桌子上的杯子里啜饮，营造出一种温暖而诱人的氛围。动物们在享受美食和彼此陪伴的同时，进行了友好的交谈，交换了故事和笑声。</p>当太阳开始落山时，动物们相互告别，并承诺很快在迷人的森林中再次见面。这一幕证明了友谊的力量，以及与所爱的人分享一顿饭的快乐，无论是哪个物种。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">从前，在一片神奇的森林里，三个不太可能的朋友——一只熊、一只猫和一只兔子——发现自己坐在一张木制餐桌旁，一起用餐。桌子上装饰着各种各样的美食，包括甜甜圈和蛋糕，他们很享受在一起的时光。</p>当他们吃东西的时候，他们开始分享故事和笑声，在他们之间形成了牢固的纽带。这只熊以其巨大的力量和智慧，分享了他在森林中的冒险故事。这只猫以其敏捷和好奇心，讲述了它与其他动物的相遇以及它所揭开的谜团。这只兔子以其速度和敏锐的感官分享了它躲避捕食者和寻找隐藏宝藏的经历。</p>随着他们继续分享自己的生活和经历，他们的友谊越来越牢固。他们意识到，尽管存在差异，但他们有很多共同点，可以相互学习。熊、猫和兔子成了形影不离的伙伴，一起探索森林，享受彼此的陪伴。</p>他们之间的纽带如此牢固，以至于他们决定创造一个神奇的地方，在那里他们可以随时聚集并分享他们的故事。他们用他们的综合力量创造了一片美丽迷人的森林，充满了美味、温暖和笑声。因此，三个朋友从此幸福地生活在他们友谊的魔力和魔法森林的奇迹中。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">很久很久以前，在一片茂密的森林里，一群动物聚集在树桩旁分享一顿饭。一只熊、一只猫和一只兔子是主要客人。最大的那只熊坐在左边，拿着一块带叉子的蛋糕。最敏捷的猫坐在中间，面前放着一杯茶和一盘食物。最小的兔子坐在右边，拿着勺子和盘子，里面装着一些食物。他们都吃得很开心，聊得很开心。吃完饭后，他们一起玩游戏，玩得很开心。当太阳开始落山时，森林变得安静起来。熊、猫、兔子互相拥抱，心怀感激，心里很开心。他们知道他们在这片神奇的森林里结交了新朋友。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 47  Category: detail</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/020.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">详细描述这个草图。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">The image presents a simple yet intriguing visual joke. It's a white square with a blue border, divided into two sections by a horizontal line. The left section is labeled "My Joke Website" in bold, black letters, suggesting a place where jokes are shared or created. The right section, labeled "Funny Joke" in black letters, implies a humorous statement or piece of content. The most interesting part of the image is the question posed in the bottom right section: "Push to reveal punchline?". This invites the viewer to interact with the image by pushing the section, presumably to reveal a hidden punchline. The overall layout and elements of the image suggest a playful and engaging experience for the viewer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张草图是一个简单的笔记本电脑卡通，上面写着“My Joke Website”。它是一个简单的草图，上面有一个标题，下面有一个问题。这张草图的主要目的是表达一个问题，即“Funny Joke? Push to Reveal Punchline”。这张草图的设计简单，用简单的笔画表示了一个笑话网站的概念，并提出了一个问题，即“有没有有一个有趣的笑话？”。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这张图片的特点是在一张纸上有一个手写的标志，很可能是白板或纸板。该标志分为两个部分，一个是“我的笑话网站”，另一个则是“有趣的笑话”。文字用蓝色墨水书写，看起来随意而非正式。标志被放置在桌子上，可能在教室或工作场所。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">这张图片的特点是一张带蓝色边框的白色纸张。纸上有一条手写信息，上面写着“我的笑话网站”。在这条信息下面，还有另一条手写文本，上面写著“有趣的笑话”。纸上还包含一个问号，可能表示质疑或戏谑的语气。蓝色边框和手写文本的结合创造了一种休闲而个性化的外观。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">这张草图是网站布局的简单图纸，特别是一个名为“我的笑话网站”的网页。该网页包含一个用蓝色墨水写的笑话，上面写着：“[有趣的笑话][推送揭示妙语]”。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 48  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/020.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">编写简短的 HTML/JS，将这个模型变成一个丰富多彩的交互式网站，其中笑话被一个真正的笑话所取代。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">为了将这个模型变成一个丰富多彩的交互式网站，我们需要使用 HTML、CSS 和 JavaScript。以下是一个简单的示例，其中笑话被一个真正的笑话所取代：</p></p>HTML:</p><code>html&lt;/p&gt;&lt;!DOCTYPE html&gt;&lt;/p&gt;&lt;html lang="en"&gt;&lt;/p&gt;&lt;head&gt;&lt;/p&gt;    &lt;meta charset="UTF-8"&gt;&lt;/p&gt;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;/p&gt;    &lt;title&gt;My Joke Website&lt;/title&gt;&lt;/p&gt;    &lt;link rel="stylesheet" href="styles.css"&gt;&lt;/p&gt;&lt;/head&gt;&lt;/p&gt;&lt;body&gt;&lt;/p&gt;    &lt;div class="container"&gt;&lt;/p&gt;        &lt;h1&gt;My Joke Website&lt;/h1&gt;&lt;/p&gt;        &lt;p&gt;Click the button to reveal a real joke:&lt;/p&gt;&lt;/p&gt;        &lt;button onclick="revealRealJoke()"&gt;Push to reveal punchline&lt;/button&gt;&lt;/p&gt;        &lt;p id="punchline"&gt;&lt;/p&gt;&lt;/p&gt;    &lt;/div&gt;&lt;/p&gt;    &lt;script src="script.js"&gt;&lt;/script&gt;&lt;/p&gt;&lt;/body&gt;&lt;/p&gt;&lt;/html&gt;&lt;/p&gt;</code></p>CSS:</p><code>css&lt;/p&gt;.container {&lt;/p&gt;    display: flex;&lt;/p&gt;    justify-content: space-between;&lt;/p&gt;    align-items: center;&lt;/p&gt;    flex-wrap: wrap;&lt;/p&gt;    margin: 0 auto;&lt;/p&gt;    max-width: 800px;&lt;/p&gt;    padding: 20px;&lt;/p&gt;    border: 1px solid #ccc;&lt;/p&gt;    border-radius: 5px;&lt;/p&gt;    box-shadow: 0 0 10px #ccc;&lt;/p&gt;}&lt;/p&gt;&lt;/p&gt;button {&lt;/p&gt;    background-color: #4CAF50;&lt;/p&gt;    color: white;&lt;/p&gt;    font-size: 16px;&lt;/p&gt;    padding: 10px 20px;&lt;/p&gt;    border: none;&lt;/p&gt;    cursor: pointer;&lt;/p&gt;}&lt;/p&gt;&lt;/p&gt;button:hover {&lt;/p&gt;    background-color: #333;&lt;/p&gt;}&lt;/p&gt;</code></p>JavaScript:</p><code>javascript&lt;/p&gt;function revealRealJoke() {&lt;/p&gt;    const punchline = "My joke website is a joke itself!";&lt;/p&gt;    document.getElementById("punchline").innerHTML = punchline;&lt;/p&gt;}&lt;/p&gt;</code></p>这个示例使用了 HTML5 和 CSS3 来创建一个简单的网站，其中包含一个按钮和一个显示笑话的段落。当用户点击按钮时，JavaScript 函数将一个真正的笑话显示在页面上。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">以下是一个简单的HTML/JS模型，将这个模型转换为一个丰富多彩的交互式网站，其中笑话被一个真正的笑话所取代。</p><code>html&lt;/p&gt;&lt;!DOCTYPE html&gt;&lt;/p&gt;&lt;html&gt;&lt;/p&gt;&lt;head&gt;&lt;/p&gt;    &lt;title&gt;My Joke Website&lt;/title&gt;&lt;/p&gt;  &lt;style&gt;&lt;/p&gt;     body {&lt;/p&gt;          background-color: #f0f0f0;&lt;/p&gt;          font-family: Arial, sans-serif;&lt;/p&gt;         text-align: center;&lt;/p&gt;         padding-top: 50px;&lt;/p&gt;          padding-bottom: 50px;&lt;/p&gt;       }&lt;/p&gt;       .jokes {&lt;/p&gt;            display: flex;&lt;/p&gt;          flex-direction: column;&lt;/p&gt;         align-items: center;&lt;/p&gt;            margin-top: 50px;&lt;/p&gt;           margin-bottom: 50px;&lt;/p&gt;        }&lt;/p&gt;       .joke {&lt;/p&gt;         font-size: 24px;&lt;/p&gt;            margin-bottom: 50px;&lt;/p&gt;            padding: 20px;&lt;/p&gt;          border: 1px solid #ccc;&lt;/p&gt;         background-color: #fff;&lt;/p&gt;         box-shadow: 0 0 5px #ccc;&lt;/p&gt;       }&lt;/p&gt;       .joke a {&lt;/p&gt;           color: #333;&lt;/p&gt;            text-decoration: none;&lt;/p&gt;          font-weight: bold;&lt;/p&gt;          font-size: 28px;&lt;/p&gt;            margin-bottom: 0;&lt;/p&gt;           cursor: pointer;&lt;/p&gt;            transition: color 0.3s ease;&lt;/p&gt;        }&lt;/p&gt;       .joke a:hover {&lt;/p&gt;         color: #000;&lt;/p&gt;        }&lt;/p&gt;       .joke a:after {&lt;/p&gt;         content: "";&lt;/p&gt;            display: block;&lt;/p&gt;         width: 0;&lt;/p&gt;           height: 0;&lt;/p&gt;          position: absolute;&lt;/p&gt;         left: 50%;&lt;/p&gt;          top: 50%;&lt;/p&gt;           margin-left: -50px;&lt;/p&gt;         margin-top: -50px;&lt;/p&gt;          background-color: #fff;&lt;/p&gt;         border: 2px solid #333;&lt;/p&gt;         border-radius: 50%;&lt;/p&gt;         opacity: 0;&lt;/p&gt;         transition: all 0.3s ease;&lt;/p&gt;      }&lt;/p&gt;       .joke a:hover:after {&lt;/p&gt;           opacity: 1;&lt;/p&gt;     }&lt;/p&gt;   &lt;/style&gt;&lt;/p&gt;&lt;/head&gt;&lt;/p&gt;&lt;body&gt;&lt;/p&gt;   &lt;h1&gt;My Joke Website&lt;/h1&gt;&lt;/p&gt;    &lt;div class="jokes"&gt;&lt;/p&gt;     &lt;div class="joke"&gt;&lt;/p&gt;          &lt;a href="#"&gt;Funny Joke&lt;/a&gt;&lt;/p&gt;      &lt;/div&gt;&lt;/p&gt;      &lt;div class="joke"&gt;&lt;/p&gt;          &lt;a href="#"&gt;Reveal Punchline&lt;/a&gt;&lt;/p&gt;        &lt;/div&gt;&lt;/p&gt;  &lt;/div&gt;&lt;/p&gt;&lt;/body&gt;&lt;/p&gt;&lt;/html&gt;&lt;/p&gt;</code></p>这个模型包含一个简单的HTML/JS模型，它包含两个笑话，一个是“Funny Joke”，另一个是“Reveal Punchline”。当用户点击“Funny Joke”时，它将显示一个占据整个屏幕的笑话，并在用户单击“Reveal Punchline”时显示笑话的真正的笑话。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">要创建一个用真实笑话代替模拟笑话的丰富多彩的交互式网站，可以使用HTML、CSS和JavaScript。以下是步骤的基本概述：</p>1.创建一个新的HTML文件，并为笑话添加一个容器，例如“＜div＞”元素。</p><code>html&lt;/p&gt;&lt;div id=“笑话容器”&gt;&lt;/p&gt;&lt;p id=“笑话”&gt;&lt;/p&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;</code></p>1.在HTML文件中添加一个JavaScript文件，并创建一个函数，从笑话API中获取随机笑话，例如<a href="https://api.chucknorris.io/jokes/random">https://api.chucknorris.io/jokes/random</a>.</p><code>javascript&lt;/p&gt;异步函数fetchJoke（）{&lt;/p&gt;const response=等待获取（'https://api.chucknorris.io/jokes/random');&lt;/p&gt;const data=等待响应.json（）；&lt;/p&gt;返回data.value；&lt;/p&gt;}&lt;/p&gt;</code></p>1.在HTML文件中，添加一个按钮来触发笑话获取，并在容器中显示笑话。</p><code>html&lt;/p&gt;&lt;button id=“joke button”&gt;获取笑话&lt;/button&gt;&lt;/p&gt;</code></p>1.添加一个CSS文件来设置笑话容器和按钮的样式。</p><code>css&lt;/p&gt;#笑话容器{&lt;/p&gt;背景颜色：#ffcc00；&lt;/p&gt;填充：20px；&lt;/p&gt;边界半径：10px；&lt;/p&gt;文本对齐：居中；&lt;/p&gt;}&lt;/p&gt;#笑话{&lt;/p&gt;字体大小：24px；&lt;/p&gt;颜色：#000；&lt;/p&gt;}&lt;/p&gt;#笑话按钮{&lt;/p&gt;背景颜色：#ffcc00；&lt;/p&gt;颜色：#fff；&lt;/p&gt;填充：10px 20px；&lt;/p&gt;边界半径：10px；&lt;/p&gt;字体大小：20px；&lt;/p&gt;游标：指针；&lt;/p&gt;}&lt;/p&gt;</code></p>1.在JavaScript文件中，向按钮添加一个事件侦听器以获取笑话，并用获取的笑话更新容器。</p><code>javascript&lt;/p&gt;const jokeButton=document.getElementById（'jokeButton'）；&lt;/p&gt;jokeButton.addEventListener（'click'，fetchJoke）；&lt;/p&gt;</code></p>1.最后，更新HTML文件以包括JavaScript文件和笑话容器。</p><code>html&lt;/p&gt;&lt;!DOCTYPE html&gt;&lt;/p&gt;&lt;html&gt;&lt;/p&gt;＜头＞&lt;/p&gt;&lt;title=我的笑话网站&lt;/title=&lt;/p&gt;&lt;link rel=“stylesheet”href=“style.css”&gt;&lt;/p&gt;&lt;/head&gt;&lt;/p&gt;&lt;body&gt;&lt;/p&gt;&lt;div id=“笑话容器”&gt;&lt;/p&gt;&lt;p id=“笑话”&gt;&lt;/p&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;&lt;script src=“script.js”&gt;&lt;/script&gt;&lt;/p&gt;&lt;/body&gt;&lt;/p&gt;&lt;/html&gt;&lt;/p&gt;</code></p>通过这些步骤，你可以创建一个丰富多彩的交互式网站，当用户点击按钮时，它会显示一个真实的笑话。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">要在模型的基础上创建一个丰富多彩的交互式网站，可以使用HTML、CSS和JavaScript。以下是一个基本示例：</p>HTML:</p><code>html&lt;/p&gt;&lt;!DOCTYPE html&gt;&lt;/p&gt;&lt;html lang=“en”&gt;&lt;/p&gt;＜头＞&lt;/p&gt;&lt;meta charset=“UTF-8”&gt;&lt;/p&gt;&lt;meta name=“viewport”content=“width=设备宽度，初始比例=1.0”&gt;&lt;/p&gt;&lt;title=我的笑话网站&lt;/title=&lt;/p&gt;&lt;link rel=“stylesheet”href=“style.css”&gt;&lt;/p&gt;&lt;/head&gt;&lt;/p&gt;&lt;body&gt;&lt;/p&gt;&lt;div class=“container”&gt;&lt;/p&gt;&lt;h1&gt;我的笑话网站&lt;/h1&gt;&lt;/p&gt;&lt;div class=“笑话箱”&gt;&lt;/p&gt;&lt;div class=“笑话类型”&gt;&lt;/p&gt;&lt;input type=“radio”id=“滑稽笑话”name=“笑话类型”value=“滑稽”checked&gt;&lt;/p&gt;&lt;label for=“滑稽笑话”&gt;滑稽笑话&lt;/label&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;&lt;div class=“笑话类型”&gt;&lt;/p&gt;&lt;input type=“radio”id=“揭示笑点”name=“笑话类型”value=“揭示笑线”&gt;&lt;/p&gt;&lt;label for=“reveal punchline”&gt;按下以显示punchline&lt;!--标签--&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;&lt;div class=“笑话”&gt;&lt;/p&gt;&lt;p id=“笑话文本”&gt;在此处输入你的笑话&lt;/p&gt;&lt;/p&gt;&lt;button id=“submit joke”&gt;提交笑话&lt;/button&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;&lt;script src=“script.js”&gt;&lt;/script&gt;&lt;/p&gt;&lt;/body&gt;&lt;/p&gt;&lt;/html&gt;&lt;/p&gt;</code></p>CSS：</p><code>css&lt;/p&gt;身体{&lt;/p&gt;font-family:Arial，sans-serif；&lt;/p&gt;背景颜色：；&lt;/p&gt;}&lt;/p&gt;.容器{&lt;/p&gt;最大宽度：800px；&lt;/p&gt;边距：0自动；&lt;/p&gt;填充：20px；&lt;/p&gt;背景颜色：#fff；&lt;/p&gt;框阴影：0 0 10px rgba（0，0，0、0.1）；&lt;/p&gt;}&lt;/p&gt;.笑话箱{&lt;/p&gt;显示：flex；&lt;/p&gt;柔性包裹：包裹；&lt;/p&gt;证明内容的合理性：之间的空间；&lt;/p&gt;}&lt;/p&gt;.笑话类型输入[type=“radio”]{&lt;/p&gt;右侧边距：10px；&lt;/p&gt;}&lt;/p&gt;.笑话类型标签{&lt;/p&gt;显示：块；&lt;/p&gt;底部边距：5px；&lt;/p&gt;}&lt;/p&gt;.笑话p{&lt;/p&gt;页边距底部：20px；&lt;/p&gt;}&lt;/p&gt;.提交按钮{&lt;/p&gt;背景颜色：#4CAF50；&lt;/p&gt;颜色：#fff；&lt;/p&gt;填充：10px 20px；&lt;/p&gt;边界：无；&lt;/p&gt;游标：指针；&lt;/p&gt;}&lt;/p&gt;.提交按钮：悬停{&lt;/p&gt;背景颜色：#45a049；&lt;/p&gt;}&lt;/p&gt;</code></p>JavaScript：</p><code>javascript&lt;/p&gt;const jokeInput=document.getElementById（“笑话文本”）；&lt;/p&gt;const-submitButton=document.getElementById（“提交笑话”）；&lt;/p&gt;const jokeTypeRadios=document.querySelectorAll（“input[name='joke-type']”）；&lt;/p&gt;submitButton.addEventListener（“点击”，函数（）{&lt;/p&gt;if（jokeTypeRadios[0]已选中）{&lt;/p&gt;jokeInput.style.display=“无”；&lt;/p&gt;jokeInput.value=“”；&lt;/p&gt;jokeInput.placeholder=“在此处输入您的搞笑笑话”；&lt;/p&gt;}否则如果（jokeTypeRadios[1].checked）{&lt;/p&gt;jokeInput.style.display=“无”；&lt;/p&gt;jokeInput.value=“”；&lt;/p&gt;jokeInput.placeholder=“按下以显示笑点？”；&lt;/p&gt;}&lt;/p&gt;});&lt;/p&gt;</code></p>本例创建了一个简单的笑话网站，其中包含容器、笑话框和笑话输入。JavaScript代码监听提交按钮点击事件，并根据所选的笑话类型单选按钮更改笑话输入显示和占位符。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">要将此模型变成一个丰富多彩的交互式网站，您需要使用 HTML 和 JavaScript 创建一个带有笑话选择器的网页，该选择器在单击时会显示一个随机笑话。下面是如何构建 HTML 的基本示例：<code>&lt;/p&gt;HTML格式：&lt;/p&gt;&lt;div&gt; &lt;div&gt; &lt;h1&gt; My Joke 网站 &lt;/h1&gt; &lt;/div&gt; [&lt;div&gt; &lt;div&gt; 搞笑笑话&lt;/div&gt;] &lt;button&gt; [推送揭示妙语] &lt;/button&gt; &lt;/div&gt; &lt;/div&gt;&lt;/p&gt;JavaScript的：&lt;/p&gt;&lt;script&gt; 定义一个笑话数组 const jokes = ['为什么科学家不相信原子？因为它们构成了一切。因为它们构成了一切。因为它们构成了一切。从数组中随机选择一个笑话 const randomJoke = jokes[Math.floor（Math.random（） * jokes.length）];显示笑话 document.getElementById（'joke'）.innerHTML = randomJoke;&lt;/script&gt;&lt;/p&gt;</code>此代码将创建一个带有标题、笑话和按钮的网页，单击该按钮时将显示笑话的妙语。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 51  Category: conv</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/022.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">供应这些菜肴的餐厅叫什么名字？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">根据提供的信息，这些菜肴的餐厅被称为“Ramen Restaurant.”</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">无</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">供应这些菜的餐馆的名字叫“寿司”</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">供应这些菜肴的餐厅的名字叫“寿司饭”</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">餐厅的名称在图像中不可见。然而，这些菜肴表明它可能是一家传统或正宗的亚洲餐厅，可能是日本餐厅，因为存在拉面和其他菜肴。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 52  Category: detail</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/022.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">详细描述这张照片。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">The image captures a delightful spread of Japanese cuisine, arranged meticulously on a wooden table. Dominating the scene is a large bowl of ramen, its surface adorned with a vibrant red and gold design. The ramen is generously filled with noodles, succulent chunks of meat, and fresh green onions, creating a symphony of colors and textures.</p></p>To the side, a small bowl cradles a serving of pickled ginger, its pink hue contrasting beautifully with the surrounding dishes. Adjacent to it, a white bowl holds a serving of soup, its contents hidden from view. A green bowl, filled with a mysterious green substance, completes the ensemble.</p></p>The table setting is completed with a pair of chopsticks and a spoon, ready to be used. The chopsticks, with their characteristic tapered ends, are positioned on the right side of the table, while the spoon rests on the left. The entire scene paints a picture of a meal waiting to be enjoyed, each dish offering a unique taste and texture to the palate.</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张图片展示了一张餐桌，餐桌上摆放着各种各样的东西。在桌子中央，有一个大碗，里面装满了各种各样的食物。桌子上还有几个碗，其中一个放在桌子的左上角，另一个放在桌子的右上角。桌子上还有几个杯子，其中一个放在桌子的左下角，另一个放在桌子的右下角。桌子上还有一个勺子，放在桌子的右下角。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">图片中的餐桌上摆放着各种食物，包括一大碗汤、一盘面条和一碗蔬菜。汤放在桌子的中央，面条和蔬菜放在桌子周围。</p>桌子上散落着几个碗和杯子，有些放在边缘附近，另一些放在中心附近。桌子上还可以看到一把勺子，很可能是用来喝汤的。餐桌布置营造出一种诱人的用餐氛围。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">图片中有一张餐桌，餐桌中央放着一大碗汤。汤配上一把勺子，放在碗里。桌子上还有其他几个碗，其中一些碗里装满了不同类型的食物，比如面条和蔬菜。</p>除了碗，桌子上还有两个杯子，一个位于左上角附近，另一个位于右上角附近。桌子的左侧可以看到一个瓶子，右上角附近放着一把勺子。餐桌布置建议您用餐时享用各种菜肴。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">图为一张桌子上摆放着各种食物的桌子。桌中间放着一碗面条，面条里伸出一把勺子。桌子上还有其他菜肴，包括一个装蔬菜的盘子和两个杯子，一个在右边，一个在左边。桌子的右边放着一双筷子。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 53  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/022.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">如果有人要为这道菜推荐一种新的口味或配料，请描述这种变化的原因以及它如何改变整体味道。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">如果要为这道菜推荐一种新的口味或配料，可以考虑添加一些新鲜的蔬菜和水果，如胡萝卜、菠菜、胡萝卜、辣椒、草莓等。这些新鲜的蔬菜和水果可以增加口感，提高整体味道的多样性和鲜味。同时，可以尝试使用不同的汤汁，如辣酱、醋汁、蒜汁等，以改变整个菜的味道。这些口味和配料的变化可以使菜更加丰富多彩，满足不同口味的食客。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">如果有人要为这道菜推荐一种新的口味或配料，可以考虑加入一些蔬菜，如西兰花、胡萝卜或蘑菇，以增加营养价值和口感。这些蔬菜可以在煮汁时加入，或者在煮汁后放入，以保持其独特的风味。这样的变化可以使整道菜更加丰富，同时也能增加一些新的风味和口感。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">如果有人要推荐一种新的口味或浇头，他们可能会建议添加一种辛辣元素，如辣椒片或红辣椒碎，以增强味道并提供更复杂的风味。这一添加将补充现有的配料，如面条、蔬菜和肉，引入辛辣的味道，与其他成分的温和味道形成对比。辣味将创造一种更动态、更有趣的味觉体验，使这道菜更令人愉快和满足那些喜欢在用餐中混合口味和质地的人。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">如果有人建议在这道菜中添加一种新的味道或浇头，这可能是为了增强整体味道，创造一种更多样、更愉快的用餐体验。例如，引入一种新的口味或海鲜等浇头，如虾或扇贝，可以为这道菜增添浓郁的鲜味，补充鸡肉、面条和蔬菜等现有食材。或者，添加一种新的浇头，如碎花生或芝麻，可以提供对比鲜明的质地和坚果味，略带甜味，与汤的咸味相得益彰。这些添加不仅会增加菜肴的多样性，还会创造出更复杂、更令人满意的口味，使用餐体验更加愉快和难忘。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">在菜肴中添加新口味或浇头可能会大大改变其味道。例如，添加辣椒等辛辣成分可以使这道菜更加浓郁和美味。添加甜味配料，如焦糖洋葱，可以引入甜味和深度的新维度。同样，加入培根或蘑菇等蛋白质可以增加汤的质地和丰富度。新口味或浇头的选择将取决于个人喜好和期望的结果。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 57  Category: detail</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/024.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">详细描述这张照片。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">The image captures a bustling highway at night, teeming with life and activity. The highway, a ribbon of gray, stretches out into the distance, its multiple lanes filled with a multitude of vehicles. The cars, predominantly white, red, and gray, are interspersed with a few yellow and blue ones, adding a splash of color to the scene. </p></p>The highway is not just a concrete jungle; it's beautifully framed by lush green trees and bushes on either side, creating a natural border that contrasts with the man-made structure. The perspective of the image is from above, providing a bird's eye view of the highway and its surroundings. This perspective allows us to appreciate the layout of the highway and the density of the traffic.</p></p>The image is taken at night, and the headlights of the cars illuminate the road, casting long shadows and creating a dynamic interplay of light and dark. The glow from the headlights and the streetlights punctuates the darkness, adding depth and dimension to the scene.</p></p>As for the landmark information "sa_1580", I'm afraid I couldn't find any specific details related to it in my current knowledge and search results. It might be helpful to provide more context or details.</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片描绘了一条繁忙的高速公路，汽车和卡车在高速公路上行驶。高速公路上有许多车辆，包括汽车和卡车。汽车分布在高速公路上，有些车辆在高速公路上行驶，而另一些则在高速公路上行驶。卡车也在高速公路上行驶，其中一些卡车在高速公路上行驶，而另一些则在高速公路上行驶。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这张照片描绘了一条繁忙的高速公路，交通繁忙，包括许多汽车和卡车。高速公路上熙熙攘攘，车辆排列在不同的位置，有些在行驶，有些在排队等候。交通拥挤，汽车和卡车几乎占据了每一条车道，造成了拥堵感。</p>公路被树木环绕，为城市景观增添了一丝自然气息。这一场景捕捉到了大城市典型一天的精髓，人们在繁忙的道路上通勤和旅行。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">这张照片描绘了一条繁忙的高速公路，交通繁忙，汽车和卡车双向行驶。公路被树木环绕，给景色增添了一丝自然的气息。路上有许多大小不一的汽车，包括较小的汽车和较大的卡车。</p>除了车辆，现场还有几个人，可能是行人或司机在休息。其中一些位于图像边缘附近，而另一些则更靠近中心。图像的整体氛围是拥堵和繁忙的活动，典型的是高峰时段繁忙的高速公路。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">城市夜景，城市街道上车来人往，天际线漆黑。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 58  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/024.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">这个城市可能面临什么问题？有哪些可能的解决方案？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">这个城市可能面临交通拥堵和环境污染的问题，因为高速公路上有大量的车辆和汽车，导致道路拥堵和空气污染。</p></p>解决方案可能包括：</p></p>1. 提高公共交通的使用率，例如开展更多的公交和地铁服务，以减少个人汽车的使用。</p>2. 实施高效的交通管理和控制系统，例如调度交通信号和路况预警，以便更好地控制交通流量。</p>3. 推广电动汽车和新能源汽车，以减少汽油消耗和排放。</p>4. 建立更多的自行车和步行道，以促进更多人选择环保的出行方式。</p>5. 推广节能和绿色建筑，以减少能源消耗和碳排放。</p></p>通过实施这些解决方案，可以帮助城市减少交通拥堵和环境污染，提高城市的生活质量和可持续性。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这个城市可能面临交通拥堵和空气污染等问题。在这张照片中，一条高速公路上挤满了汽车和卡车，车辆密集，导致了交通拥堵。这种情况可能会导致排队行驶时间的延长，增加汽车的燃油消耗和排放，进而加剧空气污染。</p></p>可能的解决方案包括：</p></p>1. 优化公共交通系统，提高其效率和可靠性，以减少人们依赖私人汽车的需求。</p>2. 鼓励弹性工作安排，以减少早晚高峰时段的工作人员，从而减少汽车的使用。</p>3. 鼓励车辆共享，例如推广卡车共享、出行合便等服务，以减少单独车辆的使用。</p>4. 推广电动汽车和其他低碳交通工具的使用，以减少汽车的燃油消耗和排放。</p>5. 对城市规划进行调整，以促进更多的人行和自行车道，减少车辆的使用。</p></p>这些解决方案可以帮助城市减少交通拥堵和空气污染，提高城市居民的生活质量。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">图片中的城市面临着严重的交通问题，高速公路上有大量的汽车和卡车，造成了拥堵，减缓了交通流量。这可能会导致出行时间增加、空气污染和驾驶员的沮丧情绪。</p>解决这一问题的一些可能解决方案包括：</p>1.实施公共交通选择，如公共汽车、火车或地铁，鼓励人们使用这些服务，而不是个人车辆，减少道路上的汽车数量。</p>2.鼓励拼车或拼车服务，以减少道路上的汽车数量，并促进更高效地利用现有基础设施。</p>3.实施拥堵收费或高占用率车辆（HOV）车道，以阻止单占用车辆，并鼓励使用更高效的交通方式。</p>4.开发和推广替代交通方式，如骑自行车或步行，以减少对个人车辆的依赖。</p>5.探索使用智能交通管理系统，通过根据实时交通数据调整交通信号和道路通行能力，优化交通流量，减少拥堵。</p>通过实施这些解决方案，该市可以努力减少交通拥堵，改善空气质量，提高居民的整体生活质量。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">这座城市可能面临着严重的交通拥堵问题，这张照片显示，一条高速公路上挤满了汽车和卡车。这种拥堵会导致出行时间增加、空气污染以及司机和乘客的压力。</p>缓解城市交通拥堵的一些可能解决方案包括：</p>1.实施公共交通系统，如公共汽车、火车或有轨电车，鼓励人们使用其他交通方式，并减少道路上的私家车数量。</p>2.鼓励拼车或拼车服务，以减少道路上的个人车辆数量。</p>3.在高峰时段实施拥堵收费或通行费，以阻止人们在交通繁忙地区驾驶。</p>4.通过创建电动滑板车专用自行车道和充电站，促进自行车和电动滑板车的使用。</p>5.鼓励弹性工作时间或远程工作，以分散全天交通流量，减少高峰时段的拥堵。</p>6.实现智能交通管理系统，该系统可以根据实时交通状况调整交通信号，以优化交通流量。</p>通过实施这些解决方案，该市可以努力减少交通拥堵，改善空气质量，提高居民的整体生活质量。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">这个城市可能面临交通拥堵的问题，这是许多城市的普遍问题。路上车辆较多，红绿灯不同步，造成长时间的堵车。为了解决这个问题，该市可以考虑实施一些措施，例如增加公共交通选择的数量，调整交通信号灯的时间，增加车道数量或建设新道路。这些解决方案可以帮助减少道路上的车辆数量并改善交通流量，从而减少交通拥堵。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><font color=red>Question_id: 59  Category: complex</font></p>
+<div  align="center">
+<img src="../llava-bench-in-the-wild/images/024.jpg" width="30%" height="30%">
+</div>
+<p><font color=red>Model Answers:</font></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">解释指示当前交通状况的所有提示。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">aj_ft_llava-</p>v1.5-7b_shar</p>egpt4v_665k_</p>100k</td>
+<td style="text-align: left;">根据提供的信息，我们可以看到这是一个夜晚的高速公路，交通状况非常繁忙。以下是各种提示：</p></p>1. 车辆：这是一个主要的交通提示，表示有许多车辆在这条高速公路上行驶。</p>2. 车辆分布：这个提示显示了车辆的分布情况，即车辆分布在不同的位置，包括中央、两侧和前后。</p>3. 车辆速度：这个提示显示了车辆的速度，表明车辆在这条高速公路上行驶的速度较快。</p>4. 车辆类型：这个提示显示了车辆的类型，包括汽车、卡车和铁路车辆。</p>5. 车辆行驶方向：这个提示显示了车辆的行驶方向，即车辆在这条高速公路上行驶的方向。</p></p>这些提示可以帮助我们更好地理解当前的交通状况，并提供有关如何更好地安全地行驶的建议。</td>
+</tr>
+<tr>
+<td style="text-align: left;">360VL</td>
+<td style="text-align: left;">这张照片描绘了一条繁忙的高速公路，汽车和卡车在高速公路上行驶。高速公路上有许多车辆，包括汽车和卡车。车辆分布在高速公路上，有些车辆在高速公路上行驶，而另一些车辆则在高速公路的各个车道上行驶。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-7</p>b-official-c</p>kpt-T</td>
+<td style="text-align: left;">这张照片描绘了一条繁忙的高速公路，交通繁忙，双向行驶的大量汽车和卡车就是明证。交通拥堵，车辆占据了所有车道，一些汽车甚至靠路肩行驶。道路上的大量车辆，加上多个红绿灯的存在，表明交通条件具有挑战性，需要驾驶员格外小心。红绿灯散布在整个场景中，有些更靠近前景，有些更远离前景，这表明它们控制着高速公路上各个点的交通流量。</td>
+</tr>
+<tr>
+<td style="text-align: left;">llava-v1.5-1</p>3b-official-</p>ckpt-T</td>
+<td style="text-align: left;">图片显示了一条繁忙的高速公路，交通繁忙，路上有大量的汽车和卡车。车辆双向行驶，占据多条车道，并紧密地挤在一起。交通似乎很拥堵，汽车和卡车占据了高速公路的整个宽度。该场景表明交通密集且缓慢，这是高峰时段或交通高峰时段的常见特征。公路沿线多个红绿灯的存在也表明交通正在得到管理和控制，以确保畅通和安全。</td>
+</tr>
+<tr>
+<td style="text-align: left;">cogvlm-chat-</p>T</td>
+<td style="text-align: left;">这张照片显示了夜间繁忙的城市街道，交通繁忙。路上有许多车辆，包括汽车、卡车和公共汽车。红绿两色的红绿灯，沿路路灯很多。人行道上也有很多行人。</td>
+</tr>
+</tbody>
+</table>
+<hr /></p>
+    </article>
+</section>
+<!-- endblock -->
+            </main>
+
+            
+                    <!-- block preview -->
+        <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
+            <div class="col themed-grid-col">
+                <a rel="prev" href="../detection/" class="nav-link">
+                    <i class="fa fa-arrow-left"></i> Previous
+                </a>
+            </div>
+            <div class="col themed-grid-col"></div>
+            <div class="col themed-grid-col">
+                <a rel="next" class="nav-link disabled">
+                    Next <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+<!-- endblock -->
+            
+
+            
+                    <!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
+    <div class="row">
+        <div class="col-12 col-md">
+                <!-- block copyright -->
+
+    <small class="d-block mb-3">
+        Made with
+        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
+            Simple Blog for MkDocs
+        </a>
+    </small>
+
+<!-- endblock -->
+        </div>
+    </div>
+</footer>
+<!-- endblock -->
+            
+        </div>
+
+            <script>var base_url = '..';</script>
+            <script src="../assets/js/jquery-3.3.1.slim.min.js""></script>
+            <script src="../assets/js/bootstrap.bundle.min.js""></script>
+            <script src="../assets/js/main.min.js""></script>
+                <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+                <script src="../search/main.js" defer></script>
+
+    </body>
+
+</html>
